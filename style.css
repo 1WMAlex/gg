@@ -1,14 +1,16 @@
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(135deg, #ff4081, #81d4fa);
+    background: linear-gradient(-45deg, #ff8c40, #fae481);
+    background-size: 400% 400%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     color: #fff;
     text-align: center;
-    animation: backgroundAnimation 10s infinite alternate;
+    animation: backgroundAnimation 5s infinite ease;
+    
 }
 
 .message-container {
@@ -44,15 +46,28 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes backgroundAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/*@keyframes backgroundAnimation {
     0% {
-        background: linear-gradient(135deg, #ff4081, #81d4fa);
+        background: linear-gradient(135deg, #ff6d40, #faee81);
+    }
+    50% {
+        background: linear-gradient(135deg, #ffbc40, #fad081);
     }
     100% {
-        background: linear-gradient(135deg, #81d4fa, #ff4081);
+        background: linear-gradient(135deg, #faee81, #ff6d40);
     }
-}
+}*/
 
 .container {
     background: rgba(0, 0, 0, 0.7);
@@ -83,10 +98,10 @@ h1 {
 
 @keyframes textAnimation {
     from {
-        color: #ff4081;
+        color: #ff9640;
     }
     to {
-        color: #81d4fa;
+        color: #fada81;
     }
 }
 
@@ -143,7 +158,76 @@ h1 {
     margin: 10px 0;
     animation: fadeIn 1s ease-in-out;
 }
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.discord-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background-color: #7289da;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.discord-button span {
+    position: relative;
+    z-index: 2;
+}
+
+.discord-button::before, .discord-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.75s ease;
+    opacity: 0;
+}
+
+.discord-button::before {
+    border-radius: 50%;
+}
+
+.discord-button::after {
+    border-radius: 0;
+}
+
+.discord-button:hover::before, .discord-button:hover::after {
+    opacity: 1;
+    width: 400%;
+    height: 400%;
+}
+
+.discord-button:hover {
+    color: #7289da;
+    background-color: #fff;
+    border-color: #7289da;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.discord-button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.discord-button:hover span {
+    transform: scale(1.1);
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
