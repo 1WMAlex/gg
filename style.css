@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff4081, #81d4fa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #ff4081, #81d4fa);
+    }
+    100% {
+        background: linear-gradient(135deg, #81d4fa, #ff4081);
+    }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: containerAnimation 1s ease-in-out;
+}
+
+@keyframes containerAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: textAnimation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes textAnimation {
+    from {
+        color: #ff4081;
+    }
+    to {
+        color: #81d4fa;
+    }
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.countdown-item {
+    font-size: 2em;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    animation: itemAnimation 1s ease-in-out infinite alternate;
+}
+
+@keyframes itemAnimation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+#countdown span {
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.features {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    animation: textAnimation 1.5s ease-in-out infinite alternate;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
